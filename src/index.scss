@@ -28,7 +28,7 @@ body {
   padding: 15px 15px 15px 30px;
   font-size: 1rem;
   font-family: 'PT Mono', sans-serif;
-
+  transition: 0.2s;
 
   &:focus {
     outline: none;
@@ -36,6 +36,13 @@ body {
 
   &-group {
     position: relative;
+
+    &._error {
+      animation: shake 0.5s;
+      .hex-input {
+        background-color: rgba(red, 0.3);
+      }
+    }
 
     &::before {
       content: '#';
@@ -75,3 +82,17 @@ body {
   }
 }
 
+@keyframes shake {
+  0% {
+    transform: translateX(-20%);
+  }
+  25% {
+    transform: translateX(20%);
+  }
+  50% {
+    transform: translateX(-20%);
+  }
+  75% {
+    transform: translateX(20%);
+  }
+}
